@@ -5,7 +5,7 @@ import { Switch } from 'react-router';
 import { Home, Posts } from '../pages';
 
 const Main = () => (
-  <div id="root">
+  <div>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/posts" component={Posts} />

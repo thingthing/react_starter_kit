@@ -67,6 +67,7 @@
     "html-webpack-plugin": "2.29.0",
     "husky": "^0.14.3",
     "jest": "20.0.4",
+    "lerna": "^3.16.4",
     "postcss-loader": "2.0.8",
     "prettier": "^1.11.1",
     "react-dev-utils": "^5.0.0",
@@ -81,15 +82,17 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "clean-cache":
-      "watchman watch-del-all && rm -rf $TMPDIR/react* && rm -rf node_modules && yarn",
-    "lint":
-      "eslint ./src --cache --ignore-path .gitignore --ignore-pattern 'src/flow-typed/*'",
+    "clean-cache": "watchman watch-del-all && rm -rf $TMPDIR/react* && rm -rf node_modules && yarn",
+    "lint": "eslint ./src --cache --ignore-path .gitignore --ignore-pattern 'src/flow-typed/*'",
     "prepush": "yarn lint"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
-    "setupFiles": ["<rootDir>/config/polyfills.js"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
@@ -99,10 +102,11 @@
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)":
-        "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
